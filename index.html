@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Lessons in Glasgow</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background: #ffffff;
+      color: #000;
+      scroll-behavior: smooth;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cinzel Decorative', cursive;
+    }
+
+    /* Contact Us Button */
+    .contact-us-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #444;
+      color: #fff;
+      padding: 15px 25px;
+      font-size: 1.3rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: 'Raleway', sans-serif;
+      z-index: 3;
+    }
+
+    .contact-us-btn:hover {
+      background-color: #666;
+    }
+
+    .logo-title-container {
+      text-align: center;
+      margin: 100px 0 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-title-container img {
+      max-width: 250px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .logo-title-container h1 {
+      font-size: 3.5rem;
+      margin: 10px 0 0 0;
+      display: inline-block;
+      position: relative;
+    }
+
+    /* Price Tag Style (Attached to 'Glasgow') */
+    .price-tag {
+      display: inline-block;
+      background: #C72B1E;
+      color: white;
+      font-weight: bold;
+      font-size: 0.75rem;
+      padding: 8px 14px;
+      border-radius: 4px;
+      position: absolute;
+      top: 47px;
+      right: -75px;
+      transform: rotate(47deg);
+      transform-origin: top left;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      animation: swing 3s ease-in-out infinite;
+    }
+
+    @keyframes swing {
+      0%   { transform: rotate(49deg); }
+      50%  { transform: rotate(57deg); }
+      100% { transform: rotate(49deg); }
+    }
+
+    .price-tag::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid #e63946;
+    }
+
+    .price-tag::after {
+      content: "";
+      position: absolute;
+      left: -4px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .lessons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.03);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 10px;
+      padding: 20px;
+      flex: 1 1 250px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .prices-menu {
+      max-width: 600px;
+      margin: 40px auto;
+      background: rgba(0,0,0,0.03);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .prices-header {
+      font-size: 2rem;
+      background: rgba(0,0,0,0.05);
+      color: #000;
+      padding: 15px;
+      cursor: pointer;
+      text-align: center;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .prices-header:hover {
+      background-color: rgba(0,0,0,0.1);
+    }
+
+    .prices-content {
+      display: none;
+      padding: 20px;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-form {
+      background: rgba(0,0,0,0.03);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .contact-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #333;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(0,0,0,0.2);
+      border-radius: 5px;
+      font-size: 1rem;
+      background: #fff;
+      color: #000;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .contact-form button {
+      background-color: #444;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .contact-form button:hover {
+      background-color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      font-size: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#contact" class="contact-us-btn">Contact Us</a>
+
+  <div class="logo-title-container">
+    <img src="2222.png" alt="Music88 UK Logo">
+    <h1>Music Lessons in Glasgow
+      <span class="price-tag">First lesson <br> -50%</span>
+    </h1>
+  </div>
+
+  <section>
+    <h2>Our lessons</h2>
+    <div class="lessons">
+      <div class="card">
+        <h3>Piano</h3>
+        <p> Study with professional pianist, trained at top music institutions. Comprehensive teaching methods, experience, and a creative approach. From beginner to professional. Preparation for ABRSM is optional. </p>
+      </div>
+      <div class="card">
+        <h3>Violin</h3>
+        <p>
+Learn from first class violinist bringing the high standard of music expertise and inspiring approach to their work. Lessons are tailored to all levels.</p>
+      </div>
+      <div class="card">
+        <h3>Music Theory</h3>
+        <p>Explore the inner structure of music — harmony, rhythm, notation, and more. Highly recommended alongside instrumental lessons to accelerate your progress, and can easily be combined with them.</p>
+      </div>
+      <div class="card">
+        <h3>Improvisation</h3>
+        <p>Discover the world of jazz and contemporary music by studying harmony, composition, and the fundamentals of improvisation. Deepen the connection to the music that inspires you.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="prices-menu">
+    <div class="prices-header" onclick="togglePrices()">Lesson Prices</div>
+    <div class="prices-content" id="pricesContent">
+      <p><strong>45 minutes:</strong> £30 </p>
+      <p><strong>60 minutes:</strong> £35 </p>
+      <p><strong>75 minutes:</strong> £45 </p>
+      <p> First lesson is half-price! <br> Discounts are available for regularly attending students. <br> Travel fee may apply depending on a distance.</p>
+    </div>
+  </div>
+
+  <section id="contact">
+    <h2>Send us a message</h2>
+    <form class="contact-form" action="mailto:music88.contact@gmail.com" method="post" enctype="text/plain">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <div style="margin-bottom: 10px;">
+      <a href="https://www.instagram.com/music88.uk/" target="_blank" style="display: inline-block; background-color: #E1306C; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+        Follow us on Instagram
+      </a>
+    </div>
+    &copy; 2025 music88.uk — All rights reserved
+    <div style="margin-top: 5px; font-size: 0.9rem;">
+      Email: <a href="mailto:music88.contact@gmail.com" style="color: #fff; text-decoration: underline;">music88.contact@gmail.com</a>
+    </div>
+  </footer>
+
+  <script>
+    function togglePrices() {
+      const content = document.getElementById('pricesContent');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

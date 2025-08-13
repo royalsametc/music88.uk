@@ -42,13 +42,9 @@
       z-index: 3;
     }
 
-    .contact-us-btn:hover {
-      background-color: #666;
-    }
-
     .logo-title-container {
       text-align: center;
-      margin: 100px 0 30px;
+      margin: 100px 0 20px;
       position: relative;
       z-index: 1;
     }
@@ -67,7 +63,7 @@
       position: relative;
     }
 
-    /* Price Tag Style (Attached to 'Glasgow') */
+    /* Price Tag Style */
     .price-tag {
       display: inline-block;
       background: #C72B1E;
@@ -97,8 +93,6 @@
       left: -10px;
       top: 50%;
       transform: translateY(-50%);
-      width: 0;
-      height: 0;
       border-top: 10px solid transparent;
       border-bottom: 10px solid transparent;
       border-right: 10px solid #e63946;
@@ -114,6 +108,19 @@
       height: 6px;
       background: white;
       border-radius: 50%;
+    }
+
+    /* Instagram icon between title and lessons */
+    .insta-logo-link {
+      display: inline-block;
+      margin: 15px auto 30px;
+    }
+
+    .insta-logo-link img {
+      width: 60px;
+      height: auto;
+      display: block;
+      margin: auto;
     }
 
     h2 {
@@ -167,11 +174,6 @@
       cursor: pointer;
       text-align: center;
       border-bottom: 1px solid rgba(0,0,0,0.1);
-      transition: background-color 0.2s ease-in-out;
-    }
-
-    .prices-header:hover {
-      background-color: rgba(0,0,0,0.1);
     }
 
     .prices-content {
@@ -202,11 +204,11 @@
       font-weight: bold;
       font-size: 1.5rem;
       color: #333;
-      font-family: 'Raleway', sans-serif;
     }
 
-    .contact-form input, 
-    .contact-form textarea {
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -215,7 +217,6 @@
       font-size: 1rem;
       background: #fff;
       color: #000;
-      font-family: 'Raleway', sans-serif;
     }
 
     .contact-form button {
@@ -226,11 +227,6 @@
       border-radius: 5px;
       font-size: 1.2rem;
       cursor: pointer;
-      font-family: 'Raleway', sans-serif;
-    }
-
-    .contact-form button:hover {
-      background-color: #666;
     }
 
     footer {
@@ -246,81 +242,104 @@
 </head>
 <body>
 
-  <a href="#contact" class="contact-us-btn">Contact Us</a>
+<a href="#contact" class="contact-us-btn">Contact Us</a>
 
-  <div class="logo-title-container">
-    <img src="2222.png" alt="Music88 UK Logo">
-    <h1>Music Lessons in Glasgow
-      <span class="price-tag">First lesson <br> -50%</span>
-    </h1>
-  </div>
+<div class="logo-title-container">
+  <img src="2222.png" alt="Music88 UK Logo">
+  <h1>Music Lessons in Glasgow
+    <span class="price-tag">First lesson <br> -50%</span>
+  </h1>
+</div>
 
-  <section>
-    <h2>Our lessons</h2>
-    <div class="lessons">
-      <div class="card">
-        <h3>Piano</h3>
-        <p> Study with professional pianist, trained at top music institutions. Comprehensive teaching methods, experience, and a creative approach. From beginner to professional. Preparation for ABRSM is optional. </p>
-      </div>
-      <div class="card">
-        <h3>Violin</h3>
-        <p>
-Learn from first class violinist bringing the high standard of music expertise and inspiring approach to their work. Lessons are tailored to all levels.</p>
-      </div>
-      <div class="card">
-        <h3>Music Theory</h3>
-        <p>Explore the inner structure of music — harmony, rhythm, notation, and more. Highly recommended alongside instrumental lessons to accelerate your progress, and can easily be combined with them.</p>
-      </div>
-      <div class="card">
-        <h3>Improvisation</h3>
-        <p>Discover the world of jazz and contemporary music by studying harmony, composition, and the fundamentals of improvisation. Deepen the connection to the music that inspires you.</p>
-      </div>
+<!-- Instagram icon between title and lessons -->
+<div style="text-align:center;">
+  <a href="https://www.instagram.com/music88.uk/" target="_blank" class="insta-logo-link">
+    <img src="7777.png" alt="Instagram black and white logo">
+  </a>
+</div>
+
+<section>
+  <h2>Our lessons</h2>
+  <div class="lessons">
+    <div class="card">
+      <h3>Piano</h3>
+      <p>Study with professional pianist, trained at top music institutions. Comprehensive teaching methods, experience, and a creative approach. From beginner to professional. Preparation for ABRSM is optional.</p>
     </div>
-  </section>
-
-  <div class="prices-menu">
-    <div class="prices-header" onclick="togglePrices()">Lesson Prices</div>
-    <div class="prices-content" id="pricesContent">
-      <p><strong>45 minutes:</strong> £30 </p>
-      <p><strong>60 minutes:</strong> £35 </p>
-      <p><strong>75 minutes:</strong> £45 </p>
-      <p> First lesson is half-price! <br> Discounts are available for regularly attending students. <br> Travel fee may apply depending on a distance.</p>
+    <div class="card">
+      <h3>Violin</h3>
+      <p>Learn from first-class violinist bringing the high standard of music expertise and inspiring approach to their work. Lessons are tailored to all levels.</p>
+    </div>
+    <div class="card">
+      <h3>Music Theory</h3>
+      <p>Explore the inner structure of music — harmony, rhythm, notation, and more. Highly recommended alongside instrumental lessons to accelerate your progress, and can easily be combined with them.</p>
+    </div>
+    <div class="card">
+      <h3>Improvisation</h3>
+      <p>Discover the world of jazz and contemporary music by studying harmony, composition, and the fundamentals of improvisation. Deepen the connection to the music that inspires you.</p>
     </div>
   </div>
+</section>
 
-  <section id="contact">
-    <h2>Send us a message</h2>
-    <form class="contact-form" action="mailto:music88.contact@gmail.com" method="post" enctype="text/plain">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+<div class="prices-menu">
+  <div class="prices-header" onclick="togglePrices()">Lesson Prices</div>
+  <div class="prices-content" id="pricesContent">
+    <p><strong>45 minutes:</strong> £30 </p>
+    <p><strong>60 minutes:</strong> £35 </p>
+    <p><strong>75 minutes:</strong> £45 </p>
+    <p>First lesson is half-price! <br> Discounts are available for regularly attending students. <br> Travel fee may apply depending on a distance.</p>
+  </div>
+</div>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+<section id="contact">
+  <h2>Send us a message</h2>
+  <form class="contact-form" action="mailto:music88.contact@gmail.com" method="post" enctype="text/plain">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
 
-      <button type="submit">Send</button>
-    </form>
-  </section>
+    <label for="lesson">Lesson of interest</label>
+    <select id="lesson" name="lesson" required>
+      <option value="">Select a lesson</option>
+      <option value="Piano">Piano</option>
+      <option value="Violin">Violin</option>
+      <option value="Music Theory">Music Theory</option>
+      <option value="Improvisation">Improvisation</option>
+    </select>
 
-  <footer>
-    <div style="margin-bottom: 10px;">
-      <a href="https://www.instagram.com/music88.uk/" target="_blank" style="display: inline-block; background-color: #E1306C; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
-        Follow us on Instagram
-      </a>
-    </div>
-    &copy; 2025 music88.uk — All rights reserved
-    <div style="margin-top: 5px; font-size: 0.9rem;">
-      Email: <a href="mailto:music88.contact@gmail.com" style="color: #fff; text-decoration: underline;">music88.contact@gmail.com</a>
-    </div>
-  </footer>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
 
-  <script>
-    function togglePrices() {
-      const content = document.getElementById('pricesContent');
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<footer>
+  <div style="margin-bottom: 10px;">
+    <a href="https://www.instagram.com/music88.uk/" target="_blank" style="display: inline-block; background-color: #E1306C; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+      Follow us on Instagram
+    </a>
+  </div>
+
+  <div style="margin-bottom: 15px; font-size: 0.7rem; line-height: 1.4;">
+    <strong>Friendly Note:</strong><br>
+    music88.uk is simply the name we use to share information about our lessons.  
+    All sessions are offered privately, arranged directly between the teacher and the student.  
+    We are not a company, and we don’t act as an employer or agency — just passionate musicians sharing our skills with those who want to learn.
+  </div>
+
+  &copy; 2025 music88.uk — All rights reserved
+  <div style="margin-top: 5px; font-size: 0.9rem;">
+    Email: <a href="mailto:music88.contact@gmail.com" style="color: #fff; text-decoration: underline;">music88.contact@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+  function togglePrices() {
+    const content = document.getElementById('pricesContent');
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
 </body>
 </html>

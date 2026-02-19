@@ -25,7 +25,6 @@
       font-family: 'Cinzel Decorative', cursive;
     }
 
-    /* Contact Us Button */
     .contact-us-btn {
       position: fixed;
       top: 20px;
@@ -63,7 +62,6 @@
       position: relative;
     }
 
-    /* Price Tag Style */
     .price-tag {
       display: inline-block;
       background: #C72B1E;
@@ -110,7 +108,6 @@
       border-radius: 50%;
     }
 
-    /* Instagram icon between title and lessons */
     .insta-logo-link {
       display: inline-block;
       margin: 15px auto 30px;
@@ -131,9 +128,10 @@
 
     .lessons {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 20px;
-      justify-content: center;
+      max-width: 700px;
+      margin: 0 auto;
       position: relative;
       z-index: 1;
     }
@@ -142,8 +140,7 @@
       background: rgba(0,0,0,0.03);
       border: 1px solid rgba(0,0,0,0.1);
       border-radius: 10px;
-      padding: 20px;
-      flex: 1 1 250px;
+      padding: 25px;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
@@ -251,7 +248,6 @@
   </h1>
 </div>
 
-<!-- Instagram icon between title and lessons -->
 <div style="text-align:center;">
   <a href="https://www.instagram.com/music88.uk/" target="_blank" class="insta-logo-link">
     <img src="7777.png" alt="Instagram black and white logo">
@@ -263,18 +259,16 @@
   <div class="lessons">
     <div class="card">
       <h3>Piano</h3>
-      <p>Study with professional pianist, trained at top music institutions. Comprehensive teaching methods, experience, and a creative approach. From beginner to professional. Preparation for ABRSM is optional.</p>
+      <p>Study with professional pianist. Comprehensive teaching methods, experience, high quality musical materials and creative approach. From complete beginners to professional. Preparation for ABRSM on request.</p>
     </div>
-    <div class="card">
-      <h3>Violin</h3>
-      <p>Learn from first-class violinist bringing the high standard of music expertise and inspiring approach to their teaching. Lessons are tailored to all levels.</p>
-    </div>
+
     <div class="card">
       <h3>Music Theory</h3>
-      <p>Explore the inner structure of music — harmony, rhythm, notation, and more. Highly recommended alongside instrumental lessons to accelerate your progress, and can easily be combined with them.</p>
+      <p>Explore the inner structure of music — harmony, rhythm, music notation, and more. Recommended alongside instrumental lessons to accelerate your progress, and can easily be combined with them.</p>
     </div>
+
     <div class="card">
-      <h3>Improvisation</h3>
+      <h3>Improvisation and composition </h3>
       <p>Discover the world of jazz and contemporary music by studying harmony, composition, and the fundamentals of improvisation. Deepen the connection to the music that inspires you.</p>
     </div>
   </div>
@@ -283,20 +277,19 @@
 <div class="prices-menu">
   <div class="prices-header" onclick="togglePrices()">Lesson Prices</div>
   <div class="prices-content" id="pricesContent">
-    <p><strong>45 minutes:</strong> £30 </p>
+    <p><strong>40 minutes:</strong> £25 </p>
+    <p><strong>50 minutes:</strong> £30 </p>
     <p><strong>60 minutes:</strong> £35 </p>
-    <p><strong>90 minutes:</strong> £45  </p>
-    <p>Discounts available for dedicated students upon request. </p>
-
-   
-
-    <p>First lesson is half-price! <br>All music materials are provided. <br> Home visits are available - travel fee may apply based on your location. </p>
+    <p><strong>First trial lesson:</strong> £10 </p>
+    <p>Discounts available for dedicated students upon request after 3 months. </p>
+    <br>All music materials are provided. <br>Home visits are available - travel fee may apply based on your location.</p>
   </div>
 </div>
 
 <section id="contact">
   <h2>Send us a message</h2>
   <form class="contact-form" action="mailto:music88.contact@gmail.com" method="post" enctype="text/plain">
+
     <label for="name">Name</label>
     <input type="text" id="name" name="name" required>
 
@@ -307,7 +300,6 @@
     <select id="lesson" name="lesson" required>
       <option value="">Select a lesson</option>
       <option value="Piano">Piano</option>
-      <option value="Violin">Violin</option>
       <option value="Music Theory">Music Theory</option>
       <option value="Improvisation">Improvisation</option>
     </select>
@@ -315,11 +307,7 @@
     <label for="message">Message</label>
     <textarea id="message" name="message" rows="5" required></textarea>
 
-    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px; margin-top: 10px;">
-      <span style="font-size: 0.95rem; color: #333;">📞 +44 7503 170600</span>
-      <span style="font-size: 0.9rem; color: #333;">✉️ music88.contact@gmail.com</span>
-      <button type="submit" style="margin-top: 10px;">Send</button>
-    </div>
+    <button type="submit">Send</button>
   </form>
 </section>
 
@@ -332,9 +320,9 @@
 
   <div style="margin-bottom: 15px; font-size: 0.7rem; line-height: 1.4;">
     <strong>Friendly Note:</strong><br>
-    music88.uk is simply the name we use to share information about our lessons.  
+    music88.uk is the name used to share the information about the lessons.  
     All sessions are offered privately, arranged directly between the teacher and the student.  
-    We are not a company, and we don’t act as an employer or agency — just passionate musicians sharing our skills with those who want to learn.
+    We are not a company, don't act as employer or agency — but we are passionate about sharing the knowleges with those who willing to learn.
   </div>
 
   &copy; 2025 music88.uk — All rights reserved
@@ -349,6 +337,6 @@
     content.style.display = content.style.display === 'block' ? 'none' : 'block';
   }
 </script>
+
 </body>
 </html>
-

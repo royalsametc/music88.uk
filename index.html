@@ -9,38 +9,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    /* --- BODY & TYPOGRAPHY --- */
     body {
       margin: 0;
       font-family: 'Raleway', sans-serif;
-      background: #ffffff;
+      background: linear-gradient(135deg, #fff9f2, #f2faff);
       color: #000;
       scroll-behavior: smooth;
       font-size: 1.15rem;
       line-height: 1.6;
       position: relative;
       overflow-x: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
     }
 
     h1, h2, h3 {
       font-family: 'Cinzel Decorative', cursive;
+      color: #2b2b2b;
     }
 
+    /* --- CONTACT BUTTON --- */
     .contact-us-btn {
       position: fixed;
       top: 20px;
       right: 20px;
-      background-color: #444;
+      background: linear-gradient(45deg, #ff6b6b, #f7d794);
       color: #fff;
       padding: 15px 25px;
       font-size: 1.3rem;
       border: none;
-      border-radius: 8px;
+      border-radius: 20px;
       cursor: pointer;
       text-decoration: none;
       font-family: 'Raleway', sans-serif;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       z-index: 3;
     }
 
+    /* --- LOGO & HEADER --- */
     .logo-title-container {
       text-align: center;
       margin: 100px 0 20px;
@@ -53,6 +59,8 @@
       height: auto;
       display: block;
       margin: 0 auto 10px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
     .logo-title-container h1 {
@@ -60,22 +68,25 @@
       margin: 10px 0 0 0;
       display: inline-block;
       position: relative;
+      color: #2a2a2a;
+      text-shadow: 2px 2px 5px rgba(255, 182, 193, 0.4);
     }
 
+    /* --- PRICE TAG --- */
     .price-tag {
       display: inline-block;
-      background: #C72B1E;
+      background: linear-gradient(135deg, #ff4b2b, #ff416c);
       color: white;
       font-weight: bold;
       font-size: 0.75rem;
       padding: 8px 14px;
-      border-radius: 4px;
+      border-radius: 12px;
       position: absolute;
       top: 47px;
       right: -75px;
       transform: rotate(47deg);
       transform-origin: top left;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       animation: swing 3s ease-in-out infinite;
     }
 
@@ -108,6 +119,7 @@
       border-radius: 50%;
     }
 
+    /* --- INSTAGRAM LOGO --- */
     .insta-logo-link {
       display: inline-block;
       margin: 15px auto 30px;
@@ -119,14 +131,19 @@
       height: auto;
       display: block;
       margin: auto;
+      filter: drop-shadow(2px 2px 3px #ff6b81);
     }
 
+    /* --- SECTION TITLES --- */
     h2 {
       font-size: 2.5rem;
       text-align: center;
       margin-bottom: 20px;
+      color: #ff6b6b;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
 
+    /* --- LESSON CARDS --- */
     .lessons {
       display: flex;
       flex-direction: column;
@@ -138,62 +155,66 @@
     }
 
     .card {
-      background: rgba(0,0,0,0.03);
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 10px;
+      background: linear-gradient(145deg, #fff1f0, #e0f7fa);
+      border-radius: 20px;
       padding: 25px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+      border: 2px solid #ff8c94;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
     }
 
     .card h3 {
       font-size: 2rem;
       margin-bottom: 10px;
-      color: #333;
+      color: #ff416c;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     }
 
+    /* --- PRICES MENU --- */
     .prices-menu {
       max-width: 600px;
       margin: 40px auto;
-      background: rgba(0,0,0,0.03);
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: linear-gradient(145deg, #fff6f0, #e0f7fa);
+      border-radius: 20px;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
       overflow: hidden;
       position: relative;
       z-index: 1;
+      border: 2px solid #ff8c94;
     }
 
     .prices-header {
       font-size: 2rem;
-      background: rgba(0,0,0,0.05);
-      color: #000;
+      background: linear-gradient(135deg, #ff6b6b, #fbc2eb);
+      color: white;
       padding: 15px;
       cursor: pointer;
       text-align: center;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
+      font-weight: 700;
+      border-bottom: 2px solid #ff8c94;
     }
 
     .prices-content {
       display: none;
       padding: 20px;
+      font-weight: 500;
+      color: #333;
     }
 
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-      position: relative;
-      z-index: 1;
-    }
-
+    /* --- CONTACT FORM --- */
     .contact-form {
-      background: rgba(0,0,0,0.03);
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 10px;
+      background: linear-gradient(145deg, #fff0f5, #e0f7fa);
+      border-radius: 20px;
       padding: 20px;
       max-width: 600px;
       margin: auto;
+      border: 2px solid #ff8c94;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
     }
 
     .contact-form label {
@@ -201,7 +222,7 @@
       margin: 10px 0 5px;
       font-weight: bold;
       font-size: 1.5rem;
-      color: #333;
+      color: #ff416c;
     }
 
     .contact-form input,
@@ -210,24 +231,26 @@
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
-      border: 1px solid rgba(0,0,0,0.2);
-      border-radius: 5px;
+      border: 1px solid #ff8c94;
+      border-radius: 12px;
       font-size: 1rem;
-      background: #fff;
+      background: #fffaf0;
       color: #000;
+      font-family: 'Raleway', sans-serif;
     }
 
     .contact-form button {
-      background-color: #444;
+      background: linear-gradient(45deg, #ff6b6b, #fbc2eb);
       color: #fff;
       padding: 12px 20px;
       border: none;
-      border-radius: 5px;
+      border-radius: 20px;
       font-size: 1.2rem;
       cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
 
-    /* --- TRIAL LESSON STYLES --- */
+    /* --- TRIAL LESSON --- */
     .trial-line {
       display: flex;
       align-items: center;
@@ -235,6 +258,7 @@
       font-weight: bold;
       margin: 15px 0;
       gap: 10px;
+      color: #ff416c;
     }
 
     .trial-line input {
@@ -252,6 +276,7 @@
     .day-column {
       text-align: center;
       font-weight: bold;
+      color: #ff6b6b;
     }
 
     .day-column input {
@@ -262,6 +287,8 @@
     .time-section {
       display: none;
       margin-top: 20px;
+      font-weight: bold;
+      color: #ff416c;
     }
 
     .time-row {
@@ -271,6 +298,21 @@
     .time-row select {
       width: auto;
       margin-left: 10px;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: linear-gradient(135deg, #ff6b6b, #fbc2eb);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 5px solid #ff416c;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
     }
 
   </style>

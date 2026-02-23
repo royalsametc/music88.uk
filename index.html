@@ -227,7 +227,7 @@
       cursor: pointer;
     }
 
-    /* --- NEW STYLES FOR TRIAL LESSON --- */
+    /* --- TRIAL LESSON STYLES --- */
     .trial-line {
       display: flex;
       align-items: center;
@@ -271,7 +271,6 @@
     .time-row select {
       width: auto;
       margin-left: 10px;
-      margin-right: 10px;
     }
 
   </style>
@@ -325,7 +324,7 @@
   </div>
 </div>
 
-<!-- === CONTACT FORM WITH TRIAL LESSON === -->
+<!-- === CONTACT FORM WITH PHONE AND TRIAL LESSON === -->
 <section id="contact">
   <h2>Send us a message</h2>
   <form class="contact-form" action="mailto:music88.contact@gmail.com" method="post" enctype="text/plain">
@@ -335,6 +334,9 @@
 
     <label for="email">Email</label>
     <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="Optional">
 
     <label for="lesson">Lesson of interest</label>
     <select id="lesson" name="lesson" required>
@@ -384,7 +386,7 @@
 
   &copy; 2025 music88.uk — All rights reserved
   <div style="margin-top: 5px; font-size: 0.9rem;">
-    Email: <a href="mailto:music88.contact@gmail.com" style="color: #000000; text-decoration: underline;">music88.contact@gmail.com</a>
+    Email: <a href="mailto:music88.contact@gmail.com" style="color: #fff; text-decoration: underline;">music88.contact@gmail.com</a>
   </div>
 </footer>
 
@@ -399,11 +401,7 @@
   const timeSection = document.getElementById("timeSection");
   const dayCheckboxes = daysRow.querySelectorAll("input[type='checkbox']");
 
-  const timeOptions = [
-    "09:00","10:00","11:00","12:00","13:00",
-    "14:00","15:00","16:00","17:00","18:00",
-    "19:00","20:00","21:00"
-  ];
+  const timeOptions = ["Before 3pm", "After 3pm", "Anytime"];
 
   function createTimeDropdown(name) {
     let select = `<select name="${name}">`;
@@ -437,16 +435,12 @@
     }
 
     timeSection.style.display = "block";
-    timeSection.innerHTML = "<strong>Please specify time range:</strong>";
+    timeSection.innerHTML = "<strong>Please select preferred time:</strong>";
 
     selectedDays.forEach(day => {
       const row = document.createElement("div");
       row.className = "time-row";
-      row.innerHTML = `
-        ${day.value}:
-        From ${createTimeDropdown(day.value + "_from")}
-        To ${createTimeDropdown(day.value + "_to")}
-      `;
+      row.innerHTML = `${day.value}: ${createTimeDropdown(day.value + "_time")}`;
       timeSection.appendChild(row);
     });
   }

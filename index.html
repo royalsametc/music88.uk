@@ -288,12 +288,23 @@
 
     /* --- RESPONSIVE DESIGN --- */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 3rem;
+      /* Stack lesson and pricing cards one under another on mobile */
+      .lesson-cards, .pricing-section .pricing-container {
+        grid-template-columns: 1fr; /* 1 column layout */
       }
 
-      .lesson-cards {
-        grid-template-columns: 1fr 1fr;
+      /* Navigation - Horizontal, not vertical */
+      nav ul {
+        justify-content: center; /* Center items */
+      }
+
+      nav a {
+        font-size: 1rem;
+        margin: 0 15px; /* Horizontal spacing between menu items */
+      }
+
+      .hero h1 {
+        font-size: 3rem;
       }
 
       .cta-btn {
@@ -309,15 +320,6 @@
         width: 100%;
         max-width: 320px;
         margin: 10px 0;
-      }
-
-      /* Navigation */
-      nav ul {
-        justify-content: space-around;
-      }
-
-      nav a {
-        font-size: 1rem;
       }
     }
 
@@ -335,11 +337,12 @@
       }
 
       nav ul {
-        flex-direction: column;
+        flex-direction: row; /* Horizontal layout */
+        align-items: center;
       }
 
       nav a {
-        margin: 10px 0;
+        margin: 0 10px; /* Even spacing */
       }
     }
   </style>

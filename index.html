@@ -147,6 +147,30 @@
       opacity: 0.9; /* 10% more transparent */
     }
 
+    /* --- INSTAGRAM BUTTON --- */
+    .instagram-btn {
+      display: inline-block;
+      margin-bottom: 20px; /* space between button and title */
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid white;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .instagram-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .instagram-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
     /* --- SECTION TITLES --- */
     h2 {
       text-align: center;
@@ -389,6 +413,11 @@
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-content">
+      <!-- Instagram Button Added Here -->
+      <a href="https://www.instagram.com/music88.uk/" target="_blank" class="instagram-btn">
+        <img src="instalogo.jpg" alt="Instagram" />
+      </a>
+
       <h1>Music Lessons in Glasgow</h1>
       <p>Piano, lessons in Glasgow</p> <!-- This text is invisible now -->
       <a href="#contact" class="cta-btn">Get Started</a>

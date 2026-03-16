@@ -203,6 +203,7 @@
       display: flex;
       justify-content: center;
       gap: 30px;
+      flex-wrap: wrap; /* Allow wrapping of cards in mobile */
     }
 
     .pricing-card {
@@ -351,10 +352,16 @@
         display: flex;
       }
 
-      /* Pricing Cards on Mobile - 5% bigger */
+      /* Pricing Cards on Mobile - Centered and Stacked */
+      .pricing-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center the cards */
+      }
+
       .pricing-card {
         width: 90%; /* Slightly bigger */
         max-width: 260px;
+        margin-bottom: 20px; /* Space between cards */
       }
 
       .pricing-card h3 {

@@ -354,26 +354,6 @@
       .menu-icon.active + ul {
         display: flex;
       }
-
-      /* Pricing Cards on Mobile - Centered and Stacked */
-      .pricing-container {
-        flex-direction: column; /* Stack cards vertically */
-        align-items: center; /* Center the cards */
-      }
-
-      .pricing-card {
-        width: 90%; /* Slightly bigger */
-        max-width: 260px;
-        margin-bottom: 20px; /* Space between cards */
-      }
-
-      .pricing-card h3 {
-        font-size: 1.8rem; /* 10% smaller for titles */
-      }
-
-      .pricing-card .price {
-        font-size: 2rem; /* 20% smaller for price */
-      }
     }
 
     @media (max-width: 480px) {
@@ -398,10 +378,10 @@
       <div></div>
     </div>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#lessons" class="btn-white">Lessons</a></li>
-      <li><a href="#pricing" class="btn-white">Pricing</a></li>
-      <li><a href="#contact" class="btn-white">Contact</a></li>
+      <li><a href="#home" onclick="closeMenu()">Home</a></li>
+      <li><a href="#lessons" class="btn-white" onclick="closeMenu()">Lessons</a></li>
+      <li><a href="#pricing" class="btn-white" onclick="closeMenu()">Pricing</a></li>
+      <li><a href="#contact" class="btn-white" onclick="closeMenu()">Contact</a></li>
     </ul>
   </nav>
 
@@ -485,6 +465,14 @@
       const menu = document.querySelector('nav ul');
       menuIcon.classList.toggle('active');
       menu.classList.toggle('active');
+    }
+
+    // Close the menu when an option is clicked
+    function closeMenu() {
+      const menu = document.querySelector('nav ul');
+      menu.classList.remove('active');
+      const menuIcon = document.querySelector('.menu-icon');
+      menuIcon.classList.remove('active');
     }
   </script>
 

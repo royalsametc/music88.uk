@@ -299,13 +299,30 @@
       }
 
       .pricing-card {
-        width: 100%; /* Cards take full width */
-        max-width: 320px;
+        width: 85%; /* 15% smaller */
+        max-width: 240px;
         margin: 10px 0; /* Space between cards */
       }
-      
+
+      .pricing-card h3 {
+        font-size: 1.8rem; /* 10% smaller for titles */
+      }
+
+      .pricing-card .price {
+        font-size: 2rem; /* 20% smaller for price */
+      }
+
       .cta-btn {
         padding: 12px 24px;
+      }
+
+      /* Fix for the menu items to be closer */
+      nav ul {
+        justify-content: space-between;
+      }
+
+      nav ul li {
+        padding: 0 8px; /* Slightly reduce the space between menu items */
       }
     }
 

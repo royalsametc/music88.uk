@@ -299,6 +299,26 @@
       .cta-btn {
         padding: 12px 24px;
       }
+
+      .pricing-container {
+        display: block;
+        padding: 0 20px;
+      }
+
+      .pricing-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 10px 0;
+      }
+
+      /* Navigation */
+      nav ul {
+        justify-content: space-around;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
     }
 
     @media (max-width: 480px) {
@@ -313,6 +333,14 @@
       .cta-btn {
         font-size: 1rem;
       }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
@@ -323,9 +351,9 @@
   <nav id="navbar">
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#lessons" class="btn-white">Our Lessons</a></li>
-      <li><a href="#pricing" class="btn-white">Lessons Pricing</a></li>
-      <li><a href="#contact" class="btn-white">Contact Us</a></li>
+      <li><a href="#lessons" class="btn-white">Lessons</a></li>
+      <li><a href="#pricing" class="btn-white">Pricing</a></li>
+      <li><a href="#contact" class="btn-white">Contact</a></li>
     </ul>
   </nav>
 

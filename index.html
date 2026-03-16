@@ -1,492 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Music Lessons in Glasgow</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Aptos:wght@400;600&family=Poppins:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* --- BODY & TYPOGRAPHY --- */
-    body {
+    /* --- GLOBAL STYLES --- */
+    * {
       margin: 0;
-      font-family: 'Raleway', sans-serif;
-      background: linear-gradient(135deg, #fff9f2, #f2faff);
-      color: #000;
-      scroll-behavior: smooth;
-      font-size: 1.15rem;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
       line-height: 1.6;
-      position: relative;
+      padding-top: 80px;
       overflow-x: hidden;
-      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-image: url('pagebach.png'); /* Set background image */
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed; /* Make the background fixed during scrolling */
+      background-blend-mode: normal; /* No blending, background stays clear */
+    }
+
+    /* --- WHITE FOG EFFECT --- */
+    body:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8); /* Thicker white fog with less transparency */
+      z-index: -1; /* Keep fog behind content */
     }
 
     h1, h2, h3 {
-      font-family: 'Cinzel Decorative', cursive;
-      color: #2b2b2b;
+      font-family: 'Open Sans', sans-serif;
+      color: #1d1d1d;
     }
 
-    /* --- CONTACT BUTTON --- */
-    .contact-us-btn {
+    /* --- NAVIGATION --- */
+    nav {
       position: fixed;
-      top: 20px;
-      right: 20px;
-      background: linear-gradient(45deg, #00b8b8, #009999);
-      color: #fff;
-      padding: 15px 25px;
-      font-size: 1.3rem;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      text-decoration: none;
-      font-family: 'Raleway', sans-serif;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      z-index: 3;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 51, 102, 0.9); /* 10% more transparent */
+      padding: 20px 30px;
+      z-index: 10;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* --- LOGO & HEADER --- */
-    .logo-title-container {
-      text-align: center;
-      margin: 100px 0 20px;
+    nav ul {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      font-size: 1.1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00aaff; /* Light blue */
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
+      z-index: 1; /* Keep hero content above the fog */
+    }
+
+    .hero-content {
+      text-align: center;
+      color: white;
       z-index: 1;
     }
 
-    .logo-title-container img {
-      max-width: 250px;
-      height: auto;
-      display: block;
-      margin: 0 auto 10px;
-      border-radius: 50%;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    .hero h1 {
+      font-family: 'Aptos', sans-serif; /* Aptos font for title */
+      font-size: 4rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 5px;
     }
 
-    .logo-title-container h1 {
-      font-size: 3.5rem;
-      margin: 10px 0 0 0;
-      display: inline-block;
-      position: relative;
-      color: #a2a2a2a;
-      text-shadow: 2px 2px 5px rgba(0, 180, 180, 0.4);
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
     }
 
-    /* --- PRICE TAG --- */
-    .price-tag {
-      display: inline-block;
-      background: linear-gradient(135deg, #ff4b2b, #ff416c); /* Original gradient */
-      color: white; /* White text */
-      font-weight: bold;
-      font-size: 0.75rem;
-      padding: 8px 14px;
-      border-radius: 12px;
-      position: absolute;
-      top: 47px;
-      right: -75px;
-      transform: rotate(47deg);
-      transform-origin: top left;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      animation: swing 3s ease-in-out infinite;
+    .cta-btn {
+      background: #003366; /* Dark blue */
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background-color 0.3s, opacity 0.3s; /* Added opacity transition */
     }
 
-    @keyframes swing {
-      0%   { transform: rotate(49deg); }
-      50%  { transform: rotate(57deg); }
-      100% { transform: rotate(49deg); }
+    .cta-btn:hover {
+      background-color: #0055aa; /* Lighter blue */
     }
 
-    .price-tag::before {
-      content: "";
-      position: absolute;
-      left: -10px;
-      top: 50%;
-      transform: translateY(-50%);
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-right: 10px solid #e63946;
-    }
-
-    .price-tag::after {
-      content: "";
-      position: absolute;
-      left: -4px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 6px;
-      height: 6px;
-      background: white;
-      border-radius: 50%;
-    }
-
-    /* --- INSTAGRAM LOGO --- */
-    .insta-logo-link {
-      display: inline-block;
-      margin: 15px auto 30px;
-      text-align: center;
-    }
-
-    .insta-logo-link img {
-      width: 60px;
-      height: auto;
-      display: block;
-      margin: auto;
-      filter: drop-shadow(2px 2px 3px #00b8b8);
+    /* Make the "Get Started" button 10% more transparent */
+    .cta-btn {
+      opacity: 0.9; /* 10% more transparent */
     }
 
     /* --- SECTION TITLES --- */
     h2 {
-      font-size: 2.5rem;
       text-align: center;
-      margin-bottom: 20px;
-      color: #007a7a;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      font-size: 2.5rem;
+      margin: 40px 0 20px;
+      color: #003366; /* Dark blue */
+      font-weight: 600;
     }
 
     /* --- LESSON CARDS --- */
-    .lessons {
-      display: flex;
-      flex-direction: column;
+    .lesson-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
-      max-width: 700px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
+      padding: 0 15px;
+      justify-items: center;
+      z-index: 1; /* Ensure cards are above the fog */
     }
 
-    .card {
-      background: linear-gradient(145deg, #f0f8ff, #e0f7fa);
-      border-radius: 20px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-      border: 2px solid #00b8b8;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .card h3 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #007a7a;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    }
-
-    /* --- PRICES MENU --- */
-    .prices-menu {
-      max-width: 600px;
-      margin: 40px auto;
-      background: linear-gradient(145deg, #e0f7fa, #f0f8ff);
-      border-radius: 20px;
-      box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-      overflow: hidden;
-      position: relative;
-      z-index: 1;
-      border: 2px solid #00b8b8;
-    }
-
-    .prices-header {
-      font-size: 2rem;
-      background: linear-gradient(135deg, #00b8b8, #008c8c);
-      color: white;
-      padding: 15px;
-      cursor: pointer;
-      text-align: center;
-      font-weight: 700;
-      border-bottom: 2px solid #00b8b8;
-    }
-
-    .prices-content {
-      display: none;
+    .lesson-card {
+      background: #fff;
+      border-radius: 15px;
       padding: 20px;
-      font-weight: 500;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .lesson-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .lesson-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #003366; /* Dark blue */
+    }
+
+    .lesson-card p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* --- PRICING SECTION --- */
+    .pricing-section {
+      background: transparent; /* Make the pricing section background transparent */
+      padding: 40px 0;
+    }
+
+    .pricing-section .pricing-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .pricing-card {
+      background: #fff; /* Solid background for the pricing cards */
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added animation */
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px); /* Hover effect */
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
+    }
+
+    .pricing-card h3 {
+      font-size: 2rem;
+      color: #003366; /* Dark blue */
+      margin-bottom: 10px;
+    }
+
+    .pricing-card p {
+      font-size: 1.1rem;
       color: #333;
+      margin-bottom: 20px;
+    }
+
+    .pricing-card .price {
+      font-size: 2.5rem;
+      color: #333;
+      font-weight: 700;
     }
 
     /* --- CONTACT FORM --- */
     .contact-form {
-      background: linear-gradient(145deg, #f0f8ff, #e0f7fa);
-      border-radius: 20px;
-      padding: 20px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       max-width: 600px;
-      margin: auto;
-      border: 2px solid #00b8b8;
-      box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .contact-form label {
-      display: block;
-      margin: 10px 0 5px;
-      font-weight: bold;
-      font-size: 1.5rem;
-      color: #007a7a;
+      margin: 50px auto;
     }
 
     .contact-form input,
-    .contact-form textarea,
-    .contact-form select {
+    .contact-form select,
+    .contact-form textarea {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #00b8b8;
-      border-radius: 12px;
-      font-size: 1rem;
-      background: #f8f8f8;
-      color: #000;
-      font-family: 'Raleway', sans-serif;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      color: #333;
     }
 
     .contact-form button {
-      background: linear-gradient(45deg, #00b8b8, #008c8c);
-      color: #fff;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 20px;
+      background: #003366; /* Dark blue */
+      padding: 15px 30px;
       font-size: 1.2rem;
+      color: white;
+      border: none;
+      border-radius: 6px;
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: background-color 0.3s;
     }
 
-    /* --- TRIAL LESSON --- */
-    .trial-line {
-      display: flex;
-      align-items: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin: 15px 0;
-      gap: 10px;
-      color: #007a7a;
+    .contact-form button:hover {
+      background-color: #0055aa; /* Lighter blue */
     }
 
-    .trial-line input {
-      transform: scale(1.6);
-      width: auto;
-      margin: 0;
+    /* --- BUTTON STYLING --- */
+    .btn-white {
+      background: transparent; /* No background */
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none; /* No border */
+      transition: color 0.3s;
     }
 
-    .days-row {
-      display: none;
-      justify-content: space-between;
-      margin-top: 15px;
-    }
-
-    .day-column {
-      text-align: center;
-      font-weight: bold;
-      color: #00b8b8;
-    }
-
-    .day-column input {
-      transform: scale(1.3);
-      margin-top: 5px;
-    }
-
-    .time-section {
-      display: none;
-      margin-top: 20px;
-      font-weight: bold;
-      color: #007a7a;
-    }
-
-    .time-row {
-      margin-bottom: 10px;
-    }
-
-    .time-row select {
-      width: auto;
-      margin-left: 10px;
+    .btn-white:hover {
+      color: #00aaff; /* Light blue text on hover */
     }
 
     /* --- FOOTER --- */
     footer {
-      background: linear-gradient(135deg, #00b8b8, #008c8c);
+      background: #003366; /* Dark blue */
       color: white;
-      padding: 20px;
       text-align: center;
-      font-size: 0.9rem;
-      border-top: 5px solid #008c8c;
+      padding: 20px;
+      font-size: 1rem;
     }
 
     footer a {
-      color: white;
-      text-decoration: underline;
+      color: #00aaff; /* Light blue */
+      text-decoration: none;
     }
 
+    /* --- RESPONSIVE DESIGN --- */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .lesson-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cta-btn {
+        padding: 12px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .lesson-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-btn {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<a href="#contact" class="contact-us-btn">Contact Us</a>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#lessons" class="btn-white">Our Lessons</a></li>
+      <li><a href="#pricing" class="btn-white">Lessons Pricing</a></li>
+      <li><a href="#contact" class="btn-white">Contact Us</a></li>
+    </ul>
+  </nav>
 
-<div class="logo-title-container">
-  <img src="2222.png" alt="Music88 UK Logo">
-  <h1>Music Lessons in Glasgow
-    <span class="price-tag">First lesson <br> -50%</span>
-  </h1>
-</div>
-
-<div style="text-align:center;">
-  <a href="https://www.instagram.com/music88.uk/" target="_blank" class="insta-logo-link">
-    <img src="7777.png" alt="Instagram black and white logo">
-  </a>
-</div>
-
-<section>
-  <h2>Our lessons</h2>
-  <div class="lessons">
-    <div class="card">
-      <h3>Piano</h3>
-      <p>Study with professional pianist. Comprehensive teaching methods, experience, high quality musical materials and creative approach. From complete beginners to professional. Preparation for ABRSM on request.</p>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Music Lessons in Glasgow</h1>
+      <p>The best teaching for the best students!</p>
+      <a href="#contact" class="cta-btn">Get Started</a>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Music Theory</h3>
-      <p>Explore the inner structure of music — harmony, rhythm, music notation, and more. Recommended alongside instrumental lessons to accelerate your progress, and can easily be combined with them.</p>
+  <!-- Lessons Section -->
+  <section id="lessons">
+    <h2>Our Lessons</h2>
+    <div class="lesson-cards">
+      <div class="lesson-card">
+        <h3>Piano</h3>
+        <p>Comprehensive piano lessons for all levels, with preparation for ABRSM exams available.</p>
+      </div>
+      <div class="lesson-card">
+        <h3>Music Theory</h3>
+        <p>Learn the fundamentals of music theory to complement your instrumental lessons.</p>
+      </div>
+      <div class="lesson-card">
+        <h3>Improvisation & Composition</h3>
+        <p>Explore creative techniques for jazz, composition, and improvisation in contemporary music.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Improvisation and composition </h3>
-      <p>Discover the world of jazz and contemporary music by studying harmony, composition, and the fundamentals of improvisation. Deepen the connection to the music that inspires you.</p>
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing-section">
+    <h2>Lesson Pricing</h2>
+    <div class="pricing-container">
+      <div class="pricing-card">
+        <h3>40 Minutes</h3>
+        <p>Perfect for beginners</p>
+        <div class="price">£25</div>
+      </div>
+      <div class="pricing-card">
+        <h3>50 Minutes</h3>
+        <p>Ideal for intermediate students</p>
+        <div class="price">£30</div>
+      </div>
+      <div class="pricing-card">
+        <h3>60 Minutes</h3>
+        <p>For advanced learners</p>
+        <div class="price">£35</div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="prices-menu">
-  <div class="prices-header" onclick="togglePrices()">Lesson Prices</div>
-  <div class="prices-content" id="pricesContent">
-    <p><strong>40 minutes:</strong> £25 </p>
-    <p><strong>50 minutes:</strong> £30 </p>
-    <p><strong>60 minutes:</strong> £35 </p>
-    <p><strong>First trial lesson:</strong> £10 </p>
-    <p>Discounts available for dedicated students upon request after 3 months. </p>
-    <br>All music materials are provided. <br>Home visits are available - travel fee may apply based on your location.</p>
-  </div>
-</div>
+  <!-- Contact Form -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form" action="mailto:music88.contact@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone (Optional)">
+      <select name="lesson" required>
+        <option value="">Select Lesson</option>
+        <option value="Piano">Piano</option>
+        <option value="Music Theory">Music Theory</option>
+        <option value="Improvisation">Improvisation</option>
+      </select>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-<section id="contact">
-  <h2>Send us a message</h2>
-  <form class="contact-form" action="mailto:music88.contact@gmail.com" method="post" enctype="text/plain">
-
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone" placeholder="Optional">
-
-    <label for="lesson">Lesson of interest</label>
-    <select id="lesson" name="lesson" required>
-      <option value="">Select a lesson</option>
-      <option value="Piano">Piano</option>
-      <option value="Music Theory">Music Theory</option>
-      <option value="Improvisation">Improvisation</option>
-    </select>
-
-    <div class="trial-line">
-      <input type="checkbox" id="trialToggle">
-      <span>I would like a trial lesson</span>
-    </div>
-
-    <div class="days-row" id="daysRow">
-      <div class="day-column">Mon<br><input type="checkbox" value="Mon"></div>
-      <div class="day-column">Tue<br><input type="checkbox" value="Tue"></div>
-      <div class="day-column">Wed<br><input type="checkbox" value="Wed"></div>
-      <div class="day-column">Thu<br><input type="checkbox" value="Thu"></div>
-      <div class="day-column">Fri<br><input type="checkbox" value="Fri"></div>
-      <div class="day-column">Sat<br><input type="checkbox" value="Sat"></div>
-      <div class="day-column">Sun<br><input type="checkbox" value="Sun"></div>
-    </div>
-
-    <div class="time-section" id="timeSection"></div>
-
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-
-    <button type="submit">Send</button>
-  </form>
-</section>
-
-<footer>
-  <div style="margin-bottom: 10px; text-align: center;">
-    <a href="https://www.instagram.com/music88.uk/" target="_blank" style="display: inline-block; background-color: #00b8b8; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
-      Follow us on Instagram
-    </a>
-  </div>
-
-  <div style="margin-bottom: 15px; font-size: 0.7rem; line-height: 1.4;">
-    <strong>Friendly Note:</strong><br>
-    music88.uk is the name used to share the information about the lessons.  
-    All sessions are offered privately, arranged directly between the teacher and the student.  
-    We are not a company, don't act as employer or agency — but we are passionate about sharing the knowleges with those who willing to learn.
-  </div>
-
-  &copy; 2025 music88.uk — All rights reserved
-  <div style="margin-top: 5px; font-size: 0.9rem;">
-    Email: <a href="mailto:music88.contact@gmail.com" style="color: #fff; text-decoration: underline;">music88.contact@gmail.com</a>
-  </div>
-</footer>
-
-<script>
-  function togglePrices() {
-    const content = document.getElementById('pricesContent');
-    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-  }
-
-  const trialToggle = document.getElementById("trialToggle");
-  const daysRow = document.getElementById("daysRow");
-  const timeSection = document.getElementById("timeSection");
-  const dayCheckboxes = daysRow.querySelectorAll("input[type='checkbox']");
-
-  const timeOptions = ["Before 3pm", "After 3pm", "Anytime"];
-
-  function createTimeDropdown(name) {
-    let select = `<select name="${name}">`;
-    select += `<option value="">Select</option>`;
-    timeOptions.forEach(time => {
-      select += `<option value="${time}">${time}</option>`;
-    });
-    select += `</select>`;
-    return select;
-  }
-
-  trialToggle.addEventListener("change", function() {
-    daysRow.style.display = this.checked ? "flex" : "none";
-    timeSection.style.display = "none";
-    timeSection.innerHTML = "";
-    dayCheckboxes.forEach(cb => cb.checked = false);
-  });
-
-  dayCheckboxes.forEach(cb => {
-    cb.addEventListener("change", function() {
-      updateTimeSection();
-    });
-  });
-
-  function updateTimeSection() {
-    const selectedDays = Array.from(dayCheckboxes).filter(cb => cb.checked);
-    if (selectedDays.length === 0) {
-      timeSection.style.display = "none";
-      timeSection.innerHTML = "";
-      return;
-    }
-
-    timeSection.style.display = "block";
-    timeSection.innerHTML = "<strong>Please select preferred time:</strong>";
-
-    selectedDays.forEach(day => {
-      const row = document.createElement("div");
-      row.className = "time-row";
-      row.innerHTML = `${day.value}: ${createTimeDropdown(day.value + "_time")}`;
-      timeSection.appendChild(row);
-    });
-  }
-</script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 music88.uk | <a href="mailto:music88.contact@gmail.com">music88.contact@gmail.com</a></p>
+  </footer>
 
 </body>
-</html>
 
+</html>

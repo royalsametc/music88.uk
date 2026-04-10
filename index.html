@@ -23,14 +23,13 @@
       line-height: 1.6;
       padding-top: 80px;
       overflow-x: hidden;
-      background-image: url('pagebach.png'); /* Set background image */
+      background-image: url('pagebach.png');
       background-size: cover;
       background-position: center center;
-      background-attachment: fixed; /* Make the background fixed during scrolling */
-      background-blend-mode: normal; /* No blending, background stays clear */
+      background-attachment: fixed;
+      background-blend-mode: normal;
     }
 
-    /* --- WHITE FOG EFFECT --- */
     body:before {
       content: '';
       position: fixed;
@@ -38,8 +37,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0.8); /* Thicker white fog with less transparency */
-      z-index: -1; /* Keep fog behind content */
+      background: rgba(255, 255, 255, 0.8);
+      z-index: -1;
     }
 
     h1, h2, h3 {
@@ -53,7 +52,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(0, 51, 102, 0.9); /* 10% more transparent */
+      background: rgba(0, 51, 102, 0.9);
       padding: 20px 30px;
       z-index: 10;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -74,10 +73,9 @@
     }
 
     nav a:hover {
-      color: #00aaff; /* Light blue */
+      color: #00aaff;
     }
 
-    /* Hamburger Menu Icon */
     .menu-icon {
       display: none;
       flex-direction: column;
@@ -103,7 +101,7 @@
       justify-content: center;
       align-items: center;
       position: relative;
-      z-index: 1; /* Keep hero content above the fog */
+      z-index: 1;
     }
 
     .hero-content {
@@ -113,7 +111,7 @@
     }
 
     .hero h1 {
-      font-family: 'Aptos', sans-serif; /* Aptos font for title */
+      font-family: 'Aptos', sans-serif;
       font-size: 4rem;
       font-weight: 600;
       margin-bottom: 20px;
@@ -124,33 +122,29 @@
     .hero p {
       font-size: 1.3rem;
       margin-bottom: 30px;
-      opacity: 0; /* Make the text invisible */
+      opacity: 0;
     }
 
     .cta-btn {
-      background: #003366; /* Dark blue */
+      background: #003366;
       padding: 15px 30px;
       font-size: 1.2rem;
       color: white;
       border-radius: 5px;
       text-decoration: none;
       font-weight: 700;
-      transition: background-color 0.3s, opacity 0.3s; /* Added opacity transition */
+      transition: background-color 0.3s, opacity 0.3s;
+      opacity: 0.9;
     }
 
     .cta-btn:hover {
-      background-color: #0055aa; /* Lighter blue */
-    }
-
-    /* Make the "Get Started" button 10% more transparent */
-    .cta-btn {
-      opacity: 0.9; /* 10% more transparent */
+      background-color: #0055aa;
     }
 
     /* --- INSTAGRAM BUTTON --- */
     .instagram-btn {
       display: inline-block;
-      margin-bottom: 20px; /* space between button and title */
+      margin-bottom: 20px;
       width: 60px;
       height: 60px;
       border-radius: 50%;
@@ -176,7 +170,7 @@
       text-align: center;
       font-size: 2.5rem;
       margin: 40px 0 20px;
-      color: #003366; /* Dark blue */
+      color: #003366;
       font-weight: 600;
     }
 
@@ -187,7 +181,7 @@
       gap: 20px;
       padding: 0 15px;
       justify-items: center;
-      z-index: 1; /* Ensure cards are above the fog */
+      z-index: 1;
     }
 
     .lesson-card {
@@ -209,7 +203,7 @@
     .lesson-card h3 {
       font-size: 1.8rem;
       margin-bottom: 15px;
-      color: #003366; /* Dark blue */
+      color: #003366;
     }
 
     .lesson-card p {
@@ -220,7 +214,7 @@
 
     /* --- PRICING SECTION --- */
     .pricing-section {
-      background: transparent; /* Make the pricing section background transparent */
+      background: transparent;
       padding: 40px 0;
     }
 
@@ -228,27 +222,27 @@
       display: flex;
       justify-content: center;
       gap: 30px;
-      flex-wrap: wrap; /* Allow wrapping of cards in mobile */
+      flex-wrap: wrap;
     }
 
     .pricing-card {
-      background: #fff; /* Solid background for the pricing cards */
+      background: #fff;
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
       width: 280px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added animation */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .pricing-card:hover {
-      transform: translateY(-10px); /* Hover effect */
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     }
 
     .pricing-card h3 {
       font-size: 2rem;
-      color: #003366; /* Dark blue */
+      color: #003366;
       margin-bottom: 10px;
     }
 
@@ -262,6 +256,19 @@
       font-size: 2.5rem;
       color: #333;
       font-weight: 700;
+    }
+
+    /* --- HOME VISIT NOTE (АДДЕД) --- */
+    .home-visit-note {
+      background: #fff;
+      padding: 15px 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: fit-content;
+      margin: 25px auto 0;
+      font-size: 1rem;
+      color: #555;
     }
 
     /* --- CONTACT FORM --- */
@@ -287,7 +294,7 @@
     }
 
     .contact-form button {
-      background: #003366; /* Dark blue */
+      background: #003366;
       padding: 15px 30px;
       font-size: 1.2rem;
       color: white;
@@ -298,28 +305,26 @@
     }
 
     .contact-form button:hover {
-      background-color: #0055aa; /* Lighter blue */
+      background-color: #0055aa;
     }
 
-    /* --- BUTTON STYLING --- */
     .btn-white {
-      background: transparent; /* No background */
+      background: transparent;
       color: white;
       padding: 10px 20px;
       border-radius: 5px;
       font-weight: 600;
       text-decoration: none;
-      border: none; /* No border */
+      border: none;
       transition: color 0.3s;
     }
 
     .btn-white:hover {
-      color: #00aaff; /* Light blue text on hover */
+      color: #00aaff;
     }
 
-    /* --- FOOTER --- */
     footer {
-      background: #003366; /* Dark blue */
+      background: #003366;
       color: white;
       text-align: center;
       padding: 20px;
@@ -327,68 +332,36 @@
     }
 
     footer a {
-      color: #00aaff; /* Light blue */
+      color: #00aaff;
       text-decoration: none;
     }
 
-    /* --- RESPONSIVE DESIGN --- */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 3rem;
-      }
+      .hero h1 { font-size: 3rem; }
+      .cta-btn { padding: 12px 24px; }
 
-      .cta-btn {
-        padding: 12px 24px;
-      }
-
-      /* For Hamburger Menu */
-      .menu-icon {
-        display: flex;
-      }
+      .menu-icon { display: flex; }
 
       nav ul {
-        display: none; /* Hide the navigation items initially */
+        display: none;
         flex-direction: column;
         width: 100%;
         text-align: center;
         position: absolute;
-        top: 60px; /* Below the navbar */
-        left: 0; /* Align to left edge */
-        background: rgba(0, 51, 102, 0.9); /* Background color */
+        top: 60px;
+        left: 0;
+        background: rgba(0, 51, 102, 0.9);
         padding: 20px 0;
-        z-index: 10;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow */
-        transition: all 0.3s ease; /* Smooth transition */
       }
 
-      nav ul li {
-        padding: 10px 0;
-      }
-
-      nav ul li a {
-        color: white;
-        font-size: 1.2rem;
-        font-weight: 600;
-      }
-
-      nav ul li a:hover {
-        color: #00aaff;
-      }
-
-      /* When the menu is active, display the navigation */
       .menu-icon.active + ul {
         display: flex;
       }
     }
 
     @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .cta-btn {
-        font-size: 1rem;
-      }
+      .hero h1 { font-size: 2.5rem; }
+      .cta-btn { font-size: 1rem; }
     }
   </style>
 </head>
@@ -398,9 +371,7 @@
   <!-- Navigation -->
   <nav id="navbar">
     <div class="menu-icon" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div></div><div></div><div></div>
     </div>
     <ul>
       <li><a href="#home" onclick="closeMenu()">Home</a></li>
@@ -410,62 +381,67 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero" id="home">
     <div class="hero-content">
-      <!-- Instagram Button Added Here -->
       <a href="https://www.instagram.com/music88.uk/" target="_blank" class="instagram-btn">
         <img src="instalogo.jpg" alt="Instagram" />
       </a>
-
       <h1>Music Lessons in Glasgow</h1>
-      <p>Piano, lessons in Glasgow</p> <!-- This text is invisible now -->
+      <p>Piano, lessons in Glasgow</p>
       <a href="#contact" class="cta-btn">Get Started</a>
     </div>
   </section>
 
-  <!-- Lessons Section -->
+  <!-- Lessons -->
   <section id="lessons">
     <h2>Our Lessons</h2>
     <div class="lesson-cards">
       <div class="lesson-card">
         <h3>Piano</h3>
-        <p>Comprehensive piano lessons for all levels, with preparation for ABRSM exams available.</p>
+        <p>Structured and inspiring piano lessons tailored to your level, with ABRSM exam preparation available.</p>
       </div>
       <div class="lesson-card">
         <h3>Music Theory</h3>
-        <p>Learn the fundamentals of music theory to complement your instrumental lessons.</p>
+        <p>Explore the inner side of music.
+Learn the fundamentals of music theory to complement your instrumental lessons.</p>
       </div>
       <div class="lesson-card">
         <h3>Improvisation & Composition</h3>
-        <p>Explore creative techniques for jazz, composition, and improvisation in contemporary music.</p>
+        <p>Unlock your potential.
+ Explore creative techniques for jazz, composition, and improvisation in contemporary music.</p>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Section -->
+  <!-- Pricing -->
   <section id="pricing" class="pricing-section">
     <h2>Lesson Pricing</h2>
     <div class="pricing-container">
       <div class="pricing-card">
         <h3>40 Minutes</h3>
-        <p>Perfect for beginners</p>
+        <p>Great for younger students</p>
         <div class="price">£25</div>
       </div>
       <div class="pricing-card">
         <h3>50 Minutes</h3>
-        <p>Ideal for intermediate students</p>
+        <p>Balanced lesson for steady progress</p>
         <div class="price">£30</div>
       </div>
       <div class="pricing-card">
         <h3>60 Minutes</h3>
-        <p>For advanced learners</p>
+        <p>For advanced students</p>
         <div class="price">£35</div>
       </div>
     </div>
+
+    <!-- ДОБАВЛЕНО -->
+    <div class="home-visit-note">
+      Home visits: +20% fee applies.
+    </div>
   </section>
 
-  <!-- Contact Form -->
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact Us</h2>
     <form class="contact-form" action="mailto:music88.contact@gmail.com" method="post" enctype="text/plain">
@@ -488,7 +464,6 @@
     <p>&copy; 2025 music88.uk | <a href="mailto:music88.contact@gmail.com">music88.contact@gmail.com</a></p>
   </footer>
 
-  <!-- JavaScript for Toggle Menu -->
   <script>
     function toggleMenu() {
       const menuIcon = document.querySelector('.menu-icon');
@@ -497,7 +472,6 @@
       menu.classList.toggle('active');
     }
 
-    // Close the menu when an option is clicked
     function closeMenu() {
       const menu = document.querySelector('nav ul');
       menu.classList.remove('active');
@@ -507,5 +481,4 @@
   </script>
 
 </body>
-
 </html>
